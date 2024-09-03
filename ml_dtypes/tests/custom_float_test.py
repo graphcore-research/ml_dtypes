@@ -794,7 +794,7 @@ class CustomFloatNumPyTest(parameterized.TestCase):
         np.arange(1, 100, dtype=float_type),
     )
     if float_type == float8_e8m0fnu:
-      return absltest.skip("Skip negative ranges for E8M0.")
+      raise self.skipTest("Skip negative ranges for E8M0.")
 
     np.testing.assert_equal(
         np.arange(-8, 8, 1, dtype=np.float32).astype(float_type),
@@ -975,7 +975,7 @@ class CustomFloatNumPyTest(parameterized.TestCase):
 
   def testCopySign(self, float_type):
     if not dtype_is_signed(float_type):
-      return absltest.skip("Skip copy sign test for unsigned floating formats.")
+      raise self.skipTest("Skip copy sign test for unsigned floating formats.")
 
     for bits in list(range(1, 128)):
       with self.subTest(bits):
