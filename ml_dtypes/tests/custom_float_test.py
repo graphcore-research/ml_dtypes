@@ -198,7 +198,7 @@ INT_VALUES = {
             range(1 << n, 2 << n, 1 << max(0, n - 2)) for n in range(16)
         )
     ),
-    float8_e8m0fnu: [0, 2, 4],
+    float8_e8m0fnu: [1, 2, 4],
 }
 
 BITS_TYPE = {
