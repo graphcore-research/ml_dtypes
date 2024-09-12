@@ -1785,6 +1785,12 @@ EIGEN_DEVICE_FUNC inline bool isinf_impl<ml_dtypes::float8_e5m2fnuz>(
 }
 
 template <>
+EIGEN_DEVICE_FUNC inline bool isinf_impl<ml_dtypes::float8_e8m0fnu>(
+    const ml_dtypes::float8_e8m0fnu& x) {
+  return ml_dtypes::float8_internal::isinf(x);
+}
+
+template <>
 EIGEN_DEVICE_FUNC inline bool isnan_impl<ml_dtypes::float8_e3m4>(
     const ml_dtypes::float8_e3m4& x) {
   return ml_dtypes::float8_internal::isnan(x);
@@ -1827,6 +1833,12 @@ EIGEN_DEVICE_FUNC inline bool isnan_impl<ml_dtypes::float8_e5m2fnuz>(
 }
 
 template <>
+EIGEN_DEVICE_FUNC inline bool isnan_impl<ml_dtypes::float8_e8m0fnu>(
+    const ml_dtypes::float8_e8m0fnu& x) {
+  return ml_dtypes::float8_internal::isnan(x);
+}
+
+template <>
 EIGEN_DEVICE_FUNC inline bool isfinite_impl<ml_dtypes::float8_e3m4>(
     const ml_dtypes::float8_e3m4& x) {
   return ml_dtypes::float8_internal::isfinite(x);
@@ -1865,6 +1877,12 @@ EIGEN_DEVICE_FUNC inline bool isfinite_impl<ml_dtypes::float8_e5m2>(
 template <>
 EIGEN_DEVICE_FUNC inline bool isfinite_impl<ml_dtypes::float8_e5m2fnuz>(
     const ml_dtypes::float8_e5m2fnuz& x) {
+  return ml_dtypes::float8_internal::isfinite(x);
+}
+
+template <>
+EIGEN_DEVICE_FUNC inline bool isfinite_impl<ml_dtypes::float8_e8m0fnu>(
+    const ml_dtypes::float8_e8m0fnu& x) {
   return ml_dtypes::float8_internal::isfinite(x);
 }
 
